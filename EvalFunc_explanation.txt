@@ -1,0 +1,14 @@
+Eval Function Explanation
+
+Name : Mayukha Thumiki
+UTA ID : 1002055616
+
+Depth limited search Implementation:
+Depth limited search has been implemented in the program. The eval function calculates points at maximum depth which implies-
+At the maximum depth:
+1. The code first checks if the current depth equals the maximum depth specified for the minimax search. If it does, it means the algorithm has reached a leaf node in the game tree and needs to evaluate this node.
+2. At a depth of 0, which is the root node of the search, the program determines which color pile (red or blue) has more marbles. It then removes one marble from the larger pile. After adjusting the piles, it calculates the total points by multiplying the number of red marbles by 2 and the number of blue marbles by 3. This represents the score that would be obtained if the game ends at this point.
+3. For non-root nodes at the maximum depth, the code checks whether red marbles (multiplied by 2) dominate blue marbles (multiplied by 3) in terms of points. If red dominates, it assigns 2 points if it's a max_node (maximizing player's turn) and -2 points if it's a min_node (minimizing player's turn). If blue dominates, it assigns -2 points for a max_node and 2 points for a min_node. This reflects the advantage or disadvantage of the current position.
+4. In both cases (root and non-root), the function returns the node with its points updated based on the evaluation at the maximum depth. The points represent the potential outcome of the game from that node, which will be used by the minimax algorithm to make decisions during the search.
+
+
